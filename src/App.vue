@@ -1,9 +1,25 @@
 <template>
-  <div>PIZZA TIME</div>
+  <AppHeader :nav="navMenu" />
 </template>
 
 <script>
-export default {};
+import AppHeader from "./components/AppHeader.vue";
+import store from "./store";
+export default {
+  components: {
+    AppHeader,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
+  computed: {
+    navMenu() {
+      return this.store.nav;
+    },
+  },
+};
 </script>
 
 <style lang="scss">

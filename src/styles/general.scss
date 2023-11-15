@@ -1,0 +1,23 @@
+@use "../styles/partials/variables" as *;
+
+html {
+  font-family: "sofia sans condensed variable", sans-serif;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: $orange-roughy;
+  color: white;
+  line-height: 30px;
+  padding: 0 20px;
+  &:hover {
+    background-color: white;
+    color: $orange-roughy;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
