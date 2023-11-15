@@ -49,7 +49,7 @@ export default {
     iconPath(i) {
       return store.getImageUrl(this.navMenu[i].path);
     },
-    navRightPath(i) {
+    navRightPath(i, p) {
       return store.getImageUrl(this.navRight[i].path);
     },
   },
@@ -75,12 +75,12 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background-color: black;
   color: rgba(255, 255, 255);
   padding: 20px;
   font-weight: 600;
   text-transform: uppercase;
-
+  position: fixed;
+  width: 100%;
   nav {
     display: flex;
     justify-content: space-between;
