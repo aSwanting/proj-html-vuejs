@@ -6,18 +6,23 @@
       </button>
       <ul class="nav-menu">
         <li
+          class="nav-item"
           :class="{ active: index === activeHeaderIndex }"
           @click="activeHeaderIndex = index"
           v-for="(item, index) in navMenu"
           :style="{ order: index }"
         >
-          <a :href="item.url">{{ item.name }}</a>
+          <a :href="item.url"
+            ><img class="icon" :src="iconPath(index)" />{{ item.name }}</a
+          >
         </li>
         <li class="logo"><img :src="navLogoPath" :alt="navLogo.name" /></li>
       </ul>
       <ul class="nav-right">
-        <li v-for="(item, index) in navRight">
-          <a href="#">{{ item.name }}</a>
+        <li class="nav-item" v-for="(item, index) in navRight" :key="index">
+          <a href="#"
+            ><img class="icon" :src="navRightPath(index)" />{{ item.name }}</a
+          >
         </li>
       </ul>
     </nav>
@@ -40,6 +45,14 @@ export default {
       activeHeaderIndex: 0,
     };
   },
+  methods: {
+    iconPath(i) {
+      return store.getImageUrl(this.navMenu[i].path);
+    },
+    navRightPath(i) {
+      return store.getImageUrl(this.navRight[i].path);
+    },
+  },
   computed: {
     navMenu() {
       return this.store.nav.navMenu;
@@ -54,8 +67,7 @@ export default {
       return this.store.nav.navLogo;
     },
     navLogoPath() {
-      console.log(this.navLogo.path);
-      return store.getImageUrl(this.navLogo.path, "png");
+      return store.getImageUrl(this.navLogo.path);
     },
   },
 };
@@ -64,7 +76,7 @@ export default {
 <style lang="scss" scoped>
 header {
   background-color: black;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255);
   padding: 20px;
   font-weight: 600;
   text-transform: uppercase;
@@ -79,18 +91,47 @@ header {
   .nav-right {
     display: flex;
     align-items: center;
-    li:hover,
-    li.active {
-      color: white;
+    gap: 50px;
+    .icon {
+      filter: invert(1);
     }
   }
 
   .nav-menu {
-    gap: 50px;
+    .nav-item {
+      opacity: 0.7;
+      position: relative;
+      .icon {
+        position: absolute;
+        top: 4px;
+        left: -24px;
+        width: 18px;
+        opacity: 0;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      &.active {
+        opacity: 1;
+        & .icon {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   .nav-right {
-    gap: 15px;
+    .nav-item {
+      position: relative;
+      .icon {
+        position: absolute;
+        top: -2px;
+        left: -35px;
+        height: 18px;
+        width: 36px;
+        object-fit: contain;
+      }
+    }
   }
   .logo {
     order: 2;
