@@ -87,7 +87,12 @@ const store = reactive({
       id: 6,
     },
   ],
-
+  gallery: [
+    { name: "gallery", path: "img/h3-img-1.jpg" },
+    { name: "gallery", path: "img/h3-img-2.jpg" },
+    { name: "gallery", path: "img/h3-img-3.jpg" },
+    { name: "gallery", path: "img/h3-img-4.jpg" },
+  ],
   // Methods
   getImageUrl(path) {
     return new URL(`./assets/${path}`, import.meta.url).href;

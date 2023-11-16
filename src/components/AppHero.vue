@@ -29,14 +29,17 @@ export default {
     },
   },
   computed: {
+    hero() {
+      return this.store.hero;
+    },
     fetchBackgroundImg() {
-      return store.getImageUrl(this.store.hero[0].path);
+      return this.store.getImageUrl(this.hero[0].path);
     },
     updateHeroImgBg() {
-      return store.getImageUrl(this.store.hero[this.sliceBgIndex].path);
+      return this.store.getImageUrl(this.hero[this.sliceBgIndex].path);
     },
     updateHeroImg() {
-      return store.getImageUrl(this.store.hero[this.sliceIndex].path);
+      return this.store.getImageUrl(this.hero[this.sliceIndex].path);
     },
     navLogoPath() {},
   },

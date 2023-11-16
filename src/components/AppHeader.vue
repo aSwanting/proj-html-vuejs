@@ -65,10 +65,10 @@ export default {
   },
   methods: {
     iconPath(i) {
-      return store.getImageUrl(this.navMenu[i].path);
+      return this.store.getImageUrl(this.navMenu[i].path);
     },
     navRightPath(i, p) {
-      return store.getImageUrl(this.navRight[i].path);
+      return this.store.getImageUrl(this.navRight[i].path);
     },
   },
   computed: {
@@ -88,7 +88,7 @@ export default {
       return this.store.nav.navLogo;
     },
     navLogoPath() {
-      return store.getImageUrl(this.navLogo.path);
+      return this.store.getImageUrl(this.navLogo.path);
     },
   },
 };
