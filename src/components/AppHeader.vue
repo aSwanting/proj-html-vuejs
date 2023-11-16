@@ -102,7 +102,7 @@ header {
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-  position: fixed;
+  position: absolute;
   z-index: 9999;
   width: 100%;
   nav {

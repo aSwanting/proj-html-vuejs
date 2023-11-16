@@ -12,3 +12,8 @@
 - Positioning the icons, at first tried using flex, then absolute. Added active class to nav-menu to show icon.
 - Positioned logo by using each menu voice an order based on index, logo then gets order from number of menu voices / 2, to always be centered (assuming menu voices are even).
 - Counter for cart items added conditionally, count from data.
+
+#### Hero
+
+- Populate from store, originally had paths in AppHero.vue.
+- Update slice index, looping around when last item reached
