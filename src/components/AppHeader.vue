@@ -103,6 +103,7 @@ header {
   font-weight: 600;
   text-transform: uppercase;
   position: fixed;
+  z-index: 9999;
   width: 100%;
   nav {
     display: flex;
