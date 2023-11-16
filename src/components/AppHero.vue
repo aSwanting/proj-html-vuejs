@@ -1,23 +1,57 @@
 <template>
-  <div class="hero">
-    <div class="hero-nav prev">prev</div>
-    <div class="hero-nav next">next</div>
+  <div class="hero" :style="{ backgroundImage: `url(${fetchBackgroundImg})` }">
+    <div class="hero-nav prev" @click="updateSliceIndex(-2)">prev</div>
+    <div class="hero-nav next" @click="updateSliceIndex(+2)">next</div>
+    <img class="slice-bg" :src="updateHeroImgBg" />
+    <img class="slice" :src="updateHeroImg" />
   </div>
 </template>
 
 <script>
-export default {};
+import store from "../store";
+
+export default {
+  data() {
+    return {
+      store,
+      sliceBgIndex: 1,
+      sliceIndex: 2,
+    };
+  },
+  methods: {
+    updateSliceIndex(i) {
+      this.sliceBgIndex += i;
+      if (this.sliceBgIndex > 5) this.sliceBgIndex = 1;
+      if (this.sliceBgIndex < 1) this.sliceBgIndex = 5;
+      this.sliceIndex += i;
+      if (this.sliceIndex > 6) this.sliceIndex = 2;
+      if (this.sliceIndex < 2) this.sliceIndex = 6;
+    },
+  },
+  computed: {
+    fetchBackgroundImg() {
+      return store.getImageUrl(this.store.hero[0].path);
+    },
+    updateHeroImgBg() {
+      return store.getImageUrl(this.store.hero[this.sliceBgIndex].path);
+    },
+    updateHeroImg() {
+      return store.getImageUrl(this.store.hero[this.sliceIndex].path);
+    },
+    navLogoPath() {},
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 
 .hero {
-  height: 500px;
+  height: 600px;
   background-color: $cod-gray;
-  background-image: url(../assets/img/cielostellato.PNG);
   background-size: cover;
   position: relative;
+  overflow: hidden;
   .hero-nav {
     background-color: $pampas;
     color: $orange-roughy;
@@ -35,6 +69,7 @@ export default {};
     justify-content: center;
     align-items: flex-start;
     cursor: pointer;
+    user-select: none;
     &.prev {
       left: calc(0% - 8px);
       transform: translate(-50%, -50%) rotate(90deg);
@@ -43,6 +78,21 @@ export default {};
       left: calc(100% + 8px);
       transform: translate(-50%, -50%) rotate(-90deg);
     }
+  }
+  .slice,
+  .slice-bg {
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  .slice {
+    height: 62%;
+    top: 60%;
+    left: 50%;
+  }
+  .slice-bg {
+    height: 45%;
+    top: 55%;
+    left: 50%;
   }
 }
 </style>
