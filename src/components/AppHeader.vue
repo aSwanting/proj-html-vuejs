@@ -48,7 +48,6 @@
 
 <script>
 import store from "../store";
-
 export default {
   props: {
     nav: {
@@ -59,6 +58,10 @@ export default {
   data() {
     return {
       store,
+      navMenu: this.nav.navMenu,
+      navRight: this.nav.navRight,
+      navButton: this.nav.navButton,
+      navLogo: this.nav.navLogo,
       activeHeaderIndex: 0,
       cartCount: 0,
     };
@@ -72,20 +75,8 @@ export default {
     },
   },
   computed: {
-    navMenu() {
-      return this.store.nav.navMenu;
-    },
     logoOrder() {
       return Math.round(this.navMenu.length / 2 - 1);
-    },
-    navRight() {
-      return this.store.nav.navRight;
-    },
-    navButton() {
-      return this.store.nav.navButton;
-    },
-    navLogo() {
-      return this.store.nav.navLogo;
     },
     navLogoPath() {
       return this.store.getImageUrl(this.navLogo.path);
