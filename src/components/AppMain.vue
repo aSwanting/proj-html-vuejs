@@ -13,6 +13,5 @@ export default {
 
 <style lang="scss" scoped>
 main {
-  border: 2px solid magenta;
 }
 </style>
