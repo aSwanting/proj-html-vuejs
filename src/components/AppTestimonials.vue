@@ -65,7 +65,7 @@ export default {
 @use "../styles/partials/variables" as *;
 
 .testimonials {
-  height: 200px;
+  padding: 80px;
   background-color: $pampas;
   background-image: url(../assets/img/h3-testimonials-bckgrnd.jpg);
   background-size: cover;
@@ -81,9 +81,9 @@ export default {
     max-width: 600px;
     .testimonials-quote {
       color: $mine-shaft;
-      font-size: 24px;
+      font-size: 28px;
       font-weight: bold;
-      line-height: 1em;
+      line-height: 1.2em;
     }
     .testimonials-source {
       color: $orange-roughy;

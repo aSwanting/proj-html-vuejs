@@ -110,6 +110,23 @@ const store = reactive({
       source: "Slice Aficionado 2023",
     },
   ],
+  specialsMenu: [
+    {
+      name: "Combo Small",
+      description: "Classic New York slice with a side salad and drink.",
+      price: "$10",
+    },
+    {
+      name: "Combo Medium",
+      description: "Pepperoni and sausage pizza with garlic knots and a drink.",
+      price: "$20",
+    },
+    {
+      name: "Combo Large",
+      description: "Half-and-half pizza, garlic breadsticks, and soda.",
+      price: "$30",
+    },
+  ],
   // Methods
   getImageUrl(path) {
     return new URL(`./assets/${path}`, import.meta.url).href;
