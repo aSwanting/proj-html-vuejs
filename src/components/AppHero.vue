@@ -41,7 +41,6 @@ export default {
     updateHeroImg() {
       return this.store.getImageUrl(this.hero[this.sliceIndex].path);
     },
-    navLogoPath() {},
   },
 };
 </script>

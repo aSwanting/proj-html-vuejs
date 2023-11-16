@@ -32,10 +32,11 @@ export default {
 .gallery {
   display: grid;
   grid-auto-flow: column;
+  gap: 6px;
   .gallery-item {
     position: relative;
-    height: 200px;
-    margin: 6px 4px;
+    aspect-ratio: 3/2;
+    margin: 6px 0px;
     background: radial-gradient(circle, #c8c8c8 10%, transparent 11%),
       radial-gradient(circle at bottom left, #c8c8c8 5%, transparent 6%),
       radial-gradient(circle at bottom right, #c8c8c8 5%, transparent 6%),
@@ -44,7 +45,6 @@ export default {
     background-size: 1em 1em;
     background-color: #ffffff;
     opacity: 1;
-
     .eye {
       position: absolute;
       top: 50%;
@@ -53,8 +53,8 @@ export default {
       transform: translate(-50%, -50%);
     }
   }
-
   .gallery-img {
+    cursor: pointer;
     position: absolute;
     display: block;
     width: 100%;

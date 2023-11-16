@@ -1,5 +1,5 @@
 <template>
-  <AppHeader :nav="navMenu" />
+  <AppHeader :nav="nav" />
   <AppMain />
 </template>
 
@@ -18,7 +18,7 @@ export default {
     };
   },
   computed: {
-    navMenu() {
+    nav() {
       return this.store.nav;
     },
   },

@@ -93,6 +93,23 @@ const store = reactive({
     { name: "gallery", path: "img/h3-img-3.jpg" },
     { name: "gallery", path: "img/h3-img-4.jpg" },
   ],
+  testimonials: [
+    {
+      quote:
+        "Forget the Trendy pizza shops, this hidden spot makes the best New York-style pizza slice in Naples",
+      source: "Washington Post 2018",
+    },
+    {
+      quote:
+        "Move over trendy pizza places, this spot nails New York-style slices in Naples!",
+      source: "Pizza Insider 2023",
+    },
+    {
+      quote:
+        "In Naples, forget the trends - this hidden gem masters New York-style pizza!",
+      source: "Slice Aficionado 2023",
+    },
+  ],
   // Methods
   getImageUrl(path) {
     return new URL(`./assets/${path}`, import.meta.url).href;
