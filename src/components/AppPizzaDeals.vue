@@ -82,7 +82,7 @@ export default {
     }
     li {
       position: relative;
-      padding-bottom: 10px;
+      padding-bottom: 18px;
       margin-bottom: 22px;
       &.underline {
         border-bottom: 2px dotted $tussock;
