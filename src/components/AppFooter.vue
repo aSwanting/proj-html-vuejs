@@ -86,7 +86,7 @@ export default {
 footer {
   display: flex;
   color: #ffffffcc;
-  font-size: 12px;
+  font-size: 10px;
   height: 400px;
 
   h2,
@@ -95,7 +95,7 @@ footer {
     color: $tussock;
   }
   h2 {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 16px;
   }
   h3 {
@@ -104,7 +104,7 @@ footer {
 }
 .footer-left {
   width: 50%;
-  padding: 40px;
+  padding: 50px;
   background-image: url(../assets/img/cielostellato.png);
   display: flex;
   flex-wrap: wrap;
@@ -143,7 +143,7 @@ footer {
   }
   .quote {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
   }
 }
@@ -163,7 +163,7 @@ footer {
     color: green;
   }
   img {
-    width: 50px;
+    width: 70px;
   }
 }
 </style>
