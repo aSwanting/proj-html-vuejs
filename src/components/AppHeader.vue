@@ -76,7 +76,7 @@ export default {
   },
   computed: {
     logoOrder() {
-      return Math.round(this.navMenu.length / 2 - 1);
+      return Math.floor((this.navMenu.length - 1) / 2);
     },
     navLogoPath() {
       return this.store.getImageUrl(this.navLogo.path);
