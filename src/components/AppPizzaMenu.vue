@@ -27,6 +27,14 @@
         src="../assets/svg/svg-4.svg"
         alt=""
       />
+      <svg
+        v-for="(dot, index) in 3"
+        :class="['dot', { active: index === scrollIndex }]"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="50" cy="50" r="50" />
+      </svg>
       <img
         class="right"
         @click="pizzaScroll('right')"
@@ -44,6 +52,7 @@ export default {
     return {
       store,
       scrollBy: 0,
+      scrollIndex: 0,
     };
   },
   methods: {
@@ -54,10 +63,20 @@ export default {
       return store.getImageUrl(this.pizzaMenu[i].path);
     },
     pizzaScroll(direction) {
+      // this.scrollIndex += i;
+      // if (this.scrollIndex > 2) this.scrollIndex = 0;
+      // if (this.scrollIndex < 0) this.scrollIndex = 2;
+
       const pizzaScroll = this.$refs.pizzaScroll;
-      if (direction === "left") this.scrollBy = -pizzaScroll.scrollWidth / 3;
-      if (direction === "right") this.scrollBy = pizzaScroll.scrollWidth / 3;
-      console.log(pizzaScroll.scrollLeft, pizzaScroll.scrollWidth);
+      if (direction === "left" && this.scrollIndex > 0) {
+        this.scrollBy = -pizzaScroll.scrollWidth / 3;
+        this.scrollIndex--;
+      }
+
+      if (direction === "right" && this.scrollIndex < 2) {
+        this.scrollBy = pizzaScroll.scrollWidth / 3;
+        this.scrollIndex++;
+      }
 
       pizzaScroll.scrollBy({
         top: 0,
@@ -163,23 +182,35 @@ export default {
 .scroll {
   display: flex;
   justify-content: center;
-  gap: 10%;
+  gap: 5%;
   padding: 20px;
   img {
     cursor: pointer;
     transition: 200ms all;
-    width: 30px;
+    width: 35px;
+    overflow: visible;
+  }
+  .dot {
+    width: 18px;
+    fill: none;
+    stroke: $orange-roughy;
+    stroke-width: 15px;
+    overflow: visible;
+    opacity: 0.5;
+    &.active {
+      opacity: 1;
+    }
   }
   .left {
     transform: rotate(-90deg);
     &:hover {
-      transform: rotate(-90deg) scale(110%);
+      transform: rotate(-90deg) scale(105%);
     }
   }
   .right {
     transform: rotate(90deg);
     &:hover {
-      transform: rotate(90deg) scale(110%);
+      transform: rotate(90deg) scale(105%);
     }
   }
 }
