@@ -20,3 +20,12 @@ html {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+::-webkit-scrollbar {
+  background-color: $satin-linen;
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $orange-roughy;
+}

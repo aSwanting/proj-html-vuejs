@@ -34,7 +34,7 @@ export default {
 
 .clients {
   background-color: $pampas;
-  padding: 50px;
+  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;

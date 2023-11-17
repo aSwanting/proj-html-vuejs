@@ -8,6 +8,7 @@
       <AppCTA />
       <AppTeam />
       <AppClients />
+      <AppPizzaMenu />
     </div>
   </main>
 </template>
@@ -20,6 +21,8 @@ import AppSpecials from "./AppSpecials.vue";
 import AppCTA from "./AppCTA.vue";
 import AppTeam from "./AppTeam.vue";
 import AppClients from "./AppClients.vue";
+import AppPizzaMenu from "./AppPizzaMenu.vue";
+
 export default {
   components: {
     AppHero,
@@ -29,6 +32,7 @@ export default {
     AppCTA,
     AppTeam,
     AppClients,
+    AppPizzaMenu,
   },
 };
 </script>
