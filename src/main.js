@@ -16,11 +16,13 @@ import {
   faInstagram,
   faFacebook,
   faTwitter,
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 library.add(
   faInstagram,
   faFacebook,
   faTwitter,
+  faLinkedin,
   faLocationDot,
   faUserGroup,
   faCalendar,

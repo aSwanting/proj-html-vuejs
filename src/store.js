@@ -223,6 +223,37 @@ const store = reactive({
       month: "nov",
     },
   ],
+  footer: {
+    restaurants: [
+      {
+        address1: "1614 E. Bell Rd #104",
+        address2: "Salerno, SA 85022",
+        phone: "(602) 867-1010",
+      },
+      {
+        address1: "298 Via Berna #3",
+        address2: "Alaska, AZ 30882",
+        phone: "(782) 491-4619",
+      },
+      {
+        address1: "9624 Garibaldi Rd #23",
+        address2: "Palermo, PA 85022",
+        phone: "(620) 958-9234",
+      },
+      {
+        address1: "9230 R. Gief #720.",
+        address2: "Rolento, RO 20465",
+        phone: "(854) 231-4509",
+      },
+    ],
+    workingHours: [
+      { day: "Monday", hours: "Kitchen Closed" },
+      { day: "Tuesday until Friday", hours: "9:00 - 22:00" },
+      { day: "Saturday", hours: "11am to midnight" },
+      { day: "Sunday", hours: "9:00 - 22:00" },
+    ],
+  },
+
   // Methods
   getImageUrl(path) {
     return new URL(`./assets/${path}`, import.meta.url).href;
