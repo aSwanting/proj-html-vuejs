@@ -5,6 +5,7 @@
     <AppTestimonials />
     <AppSpecials />
     <AppImagePuzzle />
+    <AppTeam />
   </main>
 </template>
 
@@ -14,6 +15,7 @@ import AppGallery from "./AppGallery.vue";
 import AppTestimonials from "./AppTestimonials.vue";
 import AppSpecials from "./AppSpecials.vue";
 import AppImagePuzzle from "./AppImagePuzzle.vue";
+import AppTeam from "./AppTeam.vue";
 export default {
   components: {
     AppHero,
@@ -21,8 +23,13 @@ export default {
     AppTestimonials,
     AppSpecials,
     AppImagePuzzle,
+    AppTeam,
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+main * {
+  margin-block: 6px;
+}
+</style>

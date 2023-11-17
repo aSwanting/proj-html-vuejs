@@ -1,7 +1,15 @@
 <template>
   <div class="gallery">
-    <div v-for="(img, index) in gallery" class="gallery-item">
-      <img class="eye" src="../assets/svg/svg-5.svg" alt="" />
+    <div v-for="(member, index) in gallery" class="gallery-item">
+      <div class="member-info">
+        <p class="member-name">{{ member.name }}</p>
+        <p class="member-role">{{ member.role }}</p>
+        <div class="member-social">
+          <fa-icon :icon="['fab', 'instagram']" />
+          <fa-icon :icon="['fab', 'twitter']" />
+          <fa-icon :icon="['fab', 'facebook']" />
+        </div>
+      </div>
       <img class="gallery-img" :src="galleryImg(index)" alt="" />
     </div>
   </div>
@@ -22,20 +30,20 @@ export default {
   },
   computed: {
     gallery() {
-      return this.store.gallery;
+      return this.store.team;
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@use "../styles/partials/variables" as *;
 .gallery {
   display: grid;
   grid-auto-flow: column;
-  gap: 6px;
   .gallery-item {
     position: relative;
-    aspect-ratio: 3/2;
+    aspect-ratio: 1;
     background: radial-gradient(circle, #c8c8c8 10%, transparent 11%),
       radial-gradient(circle at bottom left, #c8c8c8 5%, transparent 6%),
       radial-gradient(circle at bottom right, #c8c8c8 5%, transparent 6%),
@@ -44,12 +52,26 @@ export default {
     background-size: 1em 1em;
     background-color: #ffffff;
     opacity: 1;
-    .eye {
+    .member-info {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 80px;
-      transform: translate(-50%, -50%);
+      inset: 5%;
+      color: white;
+      background-color: $orange-roughy;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .member-name {
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .member-role {
+        margin-bottom: 8px;
+      }
+      .member-social * {
+        margin: 4px;
+      }
     }
   }
   .gallery-img {

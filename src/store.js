@@ -127,6 +127,28 @@ const store = reactive({
       price: "$30",
     },
   ],
+  team: [
+    {
+      name: "Giovanni Russo",
+      role: "Pizzaiolo",
+      path: "img/h1-team-1a.jpg",
+    },
+    {
+      name: "Isabella Romano",
+      role: "Dough Scientist",
+      path: "img/h1-team-2a.jpg",
+    },
+    {
+      name: "Carla Fuori",
+      role: "Chief Staff",
+      path: "img/h1-team-3a.jpg",
+    },
+    {
+      name: "Andre Albume",
+      role: "Topping Artist",
+      path: "img/h1-team-4a.jpg",
+    },
+  ],
   // Methods
   getImageUrl(path) {
     return new URL(`./assets/${path}`, import.meta.url).href;

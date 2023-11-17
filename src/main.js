@@ -4,4 +4,13 @@ import App from "./App.vue";
 import "@fontsource-variable/sofia-sans";
 import "@fontsource-variable/sofia-sans-condensed";
 
-createApp(App).mount("#app");
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import {
+  faInstagram,
+  faFacebook,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+library.add(faInstagram, faFacebook, faTwitter);
+
+createApp(App).component("fa-icon", FontAwesomeIcon).mount("#app");

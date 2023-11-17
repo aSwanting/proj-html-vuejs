@@ -26,7 +26,7 @@ export default {};
 .cta-caption {
   position: absolute;
   top: 50%;
-  left: 25%;
+  left: 35%;
   transform: translate(-50%, -50%);
   h2 {
     color: white;
