@@ -1,10 +1,8 @@
 <template>
   <div class="clients">
-    <img
-      v-for="(client, index) in clients"
-      :src="clientLogo(index)"
-      :alt="client.name + index + client.path"
-    />
+    <div class="client-logo" v-for="(client, index) in clients">
+      <img :src="clientLogo(index)" :alt="client.name + index + client.path" />
+    </div>
   </div>
 </template>
 
@@ -36,10 +34,11 @@ export default {
   background-color: $pampas;
   padding: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   img {
-    width: 150px;
+    display: block;
+    // width: 150px;
     // border: 2px solid;
   }
 }

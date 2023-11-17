@@ -9,6 +9,7 @@
       <AppTeam />
       <AppClients />
       <AppPizzaMenu />
+      <AppPizzaDeals />
     </div>
   </main>
 </template>
@@ -22,6 +23,7 @@ import AppCTA from "./AppCTA.vue";
 import AppTeam from "./AppTeam.vue";
 import AppClients from "./AppClients.vue";
 import AppPizzaMenu from "./AppPizzaMenu.vue";
+import AppPizzaDeals from "./AppPizzaDeals.vue";
 
 export default {
   components: {
@@ -33,6 +35,7 @@ export default {
     AppTeam,
     AppClients,
     AppPizzaMenu,
+    AppPizzaDeals,
   },
 };
 </script>

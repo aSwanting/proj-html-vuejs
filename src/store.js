@@ -203,6 +203,26 @@ const store = reactive({
       price: 12,
     },
   ],
+  deals: [
+    {
+      name: "Traditional Neapolitan pies in Kyoto Pizza Mercato",
+      location: "204 E. Pizzetta Tommaso",
+      day: "02",
+      month: "nov",
+    },
+    {
+      name: "Terrazza patio dining space opening this weekend",
+      location: "204 E. Pizzetta Tommaso",
+      day: "03",
+      month: "nov",
+    },
+    {
+      name: "Sienna private dining room with Stéphane Brunn",
+      location: "204 E. Pizzetta Tommaso",
+      day: "05",
+      month: "nov",
+    },
+  ],
   // Methods
   getImageUrl(path) {
     return new URL(`./assets/${path}`, import.meta.url).href;
