@@ -124,7 +124,6 @@ header {
 
   .nav-menu {
     .logo {
-      // order: 2;
       max-width: 160px;
     }
     .icon {
@@ -134,7 +133,11 @@ header {
       width: 18px;
     }
   }
-
+  .nav-left {
+    a {
+      padding: 0 20px;
+    }
+  }
   .nav-right {
     .icon {
       position: absolute;
