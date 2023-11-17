@@ -56,7 +56,7 @@ export default {
     align-items: center;
     img {
       display: block;
-      width: 60%;
+      width: 200px;
     }
   }
   .specials-menu {
