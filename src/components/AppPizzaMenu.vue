@@ -9,8 +9,12 @@
       </p>
     </div>
     <div class="menu-pizzas">
-      <div class="pizza" v-for="(pizza, index) in pizzaMenu">
-        <div v-show="index === 3" class="badge">Sold</div>
+      <div
+        class="pizza"
+        v-for="(pizza, index) in pizzaMenu"
+        @click="toggleCart(index)"
+      >
+        <div v-show="pizza.inCart === true" class="badge">Sold</div>
         <img :src="pizzaImg(index)" :alt="pizza.name" />
         <p class="pizza-name">{{ pizza.name }}</p>
         <p class="pizza-price">${{ pizza.price.toFixed(2) }}</p>
@@ -28,6 +32,9 @@ export default {
     };
   },
   methods: {
+    toggleCart(index) {
+      this.pizzaMenu[index].inCart = !this.pizzaMenu[index].inCart;
+    },
     pizzaImg(i) {
       return store.getImageUrl(this.pizzaMenu[i].path);
     },
@@ -36,6 +43,11 @@ export default {
     pizzaMenu() {
       return this.store.pizzaMenu;
     },
+  },
+  mounted() {
+    this.pizzaMenu.forEach((pizza) => {
+      pizza.inCart = false;
+    });
   },
 };
 </script>
