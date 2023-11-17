@@ -34,12 +34,11 @@ export default {
   background-color: $pampas;
   padding: 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   img {
     display: block;
-    // width: 150px;
-    // border: 2px solid;
+    width: 150px;
   }
 }
 </style>

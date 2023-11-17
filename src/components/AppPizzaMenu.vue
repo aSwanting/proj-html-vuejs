@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 .menu {
-  padding: 40px 0;
+  padding: 80px 0;
   overflow: hidden;
   .menu-text {
     text-align: center;
@@ -93,7 +93,7 @@ export default {
         z-index: 9999;
       }
       img {
-        width: 100px;
+        width: 130px;
         display: block;
         margin-bottom: 18px;
         transition: 200ms all;

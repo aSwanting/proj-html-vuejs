@@ -60,7 +60,7 @@ export default {
     }
   }
   .deals-menu {
-    padding: 100px;
+    padding: 0 150px;
     background-image: url(../assets/img/cielostellato.png);
     background-size: cover;
     display: flex;
