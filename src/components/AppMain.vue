@@ -1,11 +1,14 @@
 <template>
   <main>
     <AppHero />
-    <AppGallery />
-    <AppTestimonials />
-    <AppSpecials />
-    <AppImagePuzzle />
-    <AppTeam />
+    <div class="app-body">
+      <AppGallery />
+      <AppTestimonials />
+      <AppSpecials />
+      <AppCTA />
+      <AppTeam />
+      <AppClients />
+    </div>
   </main>
 </template>
 
@@ -14,22 +17,26 @@ import AppHero from "./AppHero.vue";
 import AppGallery from "./AppGallery.vue";
 import AppTestimonials from "./AppTestimonials.vue";
 import AppSpecials from "./AppSpecials.vue";
-import AppImagePuzzle from "./AppImagePuzzle.vue";
+import AppCTA from "./AppCTA.vue";
 import AppTeam from "./AppTeam.vue";
+import AppClients from "./AppClients.vue";
 export default {
   components: {
     AppHero,
     AppGallery,
     AppTestimonials,
     AppSpecials,
-    AppImagePuzzle,
+    AppCTA,
     AppTeam,
+    AppClients,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-main * {
+.app-body * {
   margin-block: 6px;
+  margin-inline: auto;
+  // max-width: 1200px;
 }
 </style>

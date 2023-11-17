@@ -139,14 +139,36 @@ const store = reactive({
       path: "img/h1-team-2a.jpg",
     },
     {
+      name: "Andre Albume",
+      role: "Topping Artist",
+      path: "img/h1-team-4a.jpg",
+    },
+    {
       name: "Carla Fuori",
       role: "Chief Staff",
       path: "img/h1-team-3a.jpg",
     },
+  ],
+  clients: [
     {
-      name: "Andre Albume",
-      role: "Topping Artist",
-      path: "img/h1-team-4a.jpg",
+      name: "Big Cheese",
+      path: "img/h1-clients-img-1.png",
+    },
+    {
+      name: "Bludoos Bar",
+      path: "img/h1-clients-img-2.png",
+    },
+    {
+      name: "Gordon",
+      path: "img/h1-clients-img-3.png",
+    },
+    {
+      name: "Cowboy",
+      path: "img/h1-clients-img-4.png",
+    },
+    {
+      name: "Vegan",
+      path: "img/h1-clients-img-5.png",
     },
   ],
   // Methods
