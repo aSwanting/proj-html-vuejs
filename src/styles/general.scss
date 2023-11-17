@@ -30,3 +30,7 @@ html {
 ::-webkit-scrollbar-thumb {
   background-color: $orange-roughy;
 }
+
+::-webkit-scrollbar:horizontal {
+  display: none;
+}

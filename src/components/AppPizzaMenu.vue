@@ -8,7 +8,7 @@
         optio fugiat corporis quaerat officiis!
       </p>
     </div>
-    <div class="menu-pizzas">
+    <div class="menu-pizzas" ref="pizzaScroll">
       <div
         class="pizza"
         v-for="(pizza, index) in pizzaMenu"
@@ -20,6 +20,20 @@
         <p class="pizza-price">${{ pizza.price.toFixed(2) }}</p>
       </div>
     </div>
+    <div class="scroll">
+      <img
+        class="left"
+        @click="pizzaScroll('left')"
+        src="../assets/svg/svg-4.svg"
+        alt=""
+      />
+      <img
+        class="right"
+        @click="pizzaScroll('right')"
+        src="../assets/svg/svg-4.svg"
+        alt=""
+      />
+    </div>
   </div>
 </template>
 
@@ -29,6 +43,7 @@ export default {
   data() {
     return {
       store,
+      scrollBy: 0,
     };
   },
   methods: {
@@ -37,6 +52,18 @@ export default {
     },
     pizzaImg(i) {
       return store.getImageUrl(this.pizzaMenu[i].path);
+    },
+    pizzaScroll(direction) {
+      const pizzaScroll = this.$refs.pizzaScroll;
+      if (direction === "left") this.scrollBy = -pizzaScroll.scrollWidth / 3;
+      if (direction === "right") this.scrollBy = pizzaScroll.scrollWidth / 3;
+      console.log(pizzaScroll.scrollLeft, pizzaScroll.scrollWidth);
+
+      pizzaScroll.scrollBy({
+        top: 0,
+        left: this.scrollBy,
+        behavior: "smooth",
+      });
     },
   },
   computed: {
@@ -55,7 +82,7 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 .menu {
-  padding: 80px 0;
+  padding: 60px 0;
   overflow: hidden;
   .menu-text {
     text-align: center;
@@ -83,12 +110,16 @@ export default {
   }
   .menu-pizzas {
     display: flex;
-    justify-content: space-evenly;
     align-items: flex-start;
+    padding: 30px;
+    overflow: auto;
+    gap: 80px;
     .pizza {
       position: relative;
       text-align: center;
       cursor: pointer;
+      flex-shrink: 0;
+      overflow: visible;
       .badge {
         background-color: $orange-roughy;
         position: absolute;
@@ -105,12 +136,12 @@ export default {
         z-index: 9999;
       }
       img {
-        width: 130px;
+        width: 150px;
         display: block;
         margin-bottom: 18px;
         transition: 200ms all;
         &:hover {
-          transform: scale(105%);
+          transform: scale(102%);
         }
       }
       .pizza-name {
@@ -125,6 +156,30 @@ export default {
         font-weight: 800;
         font-size: 14px;
       }
+    }
+  }
+}
+
+.scroll {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  padding: 20px;
+  img {
+    cursor: pointer;
+    transition: 200ms all;
+    width: 30px;
+  }
+  .left {
+    transform: rotate(-90deg);
+    &:hover {
+      transform: rotate(-90deg) scale(110%);
+    }
+  }
+  .right {
+    transform: rotate(90deg);
+    &:hover {
+      transform: rotate(90deg) scale(110%);
     }
   }
 }

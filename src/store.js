@@ -202,6 +202,36 @@ const store = reactive({
       path: "img/h3-product-img-6a-100x100.png",
       price: 12,
     },
+    {
+      name: "Bismark",
+      path: "img/h3-product-img-1a-100x100.png",
+      price: 14,
+    },
+    {
+      name: "Fiore di zucca",
+      path: "img/h3-product-img-2a-150x150.png",
+      price: 12,
+    },
+    {
+      name: "Valdostana",
+      path: "img/h3-product-img-3a-150x150.png",
+      price: 15,
+    },
+    {
+      name: "Pizza Tartufata",
+      path: "img/h3-product-img-4a-150x150.png",
+      price: 16,
+    },
+    {
+      name: "Francescana",
+      path: "img/h3-product-img-5a-150x150.png",
+      price: 12,
+    },
+    {
+      name: "Campagnola",
+      path: "img/h3-product-img-6a-100x100.png",
+      price: 12,
+    },
   ],
   deals: [
     {
